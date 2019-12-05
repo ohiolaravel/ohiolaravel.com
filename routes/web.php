@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@show')->name('welcome');
+
+Route::post('newsletter/signup', 'NewsletterController@store');
