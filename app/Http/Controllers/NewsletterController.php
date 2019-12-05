@@ -10,7 +10,7 @@ class NewsletterController extends Controller
 {
     public function store(NewsletterStoreRequest $request)
     {
-        Newsletter::subscribe($request->email);
+        Newsletter::subscribePending($request->email);
 
         $request->session()->flash('signup', 'Thanks for signing up! Please check your email for confirmation.');
 
