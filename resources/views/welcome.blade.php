@@ -8,8 +8,8 @@
     </head>
     <body class="font-sans antialiased bg-cover bg-welcome">
         <div class="relative flex flex-col min-h-screen overflow-hidden lg:flex-row">
-            <div class="relative lg:max-h-screen lg:min-h-screen lg:min-w-3xl xl:min-w-3xl lg:flex lg:items-center lg:justify-center lg:w-2/5 lg:py-20 lg:pl-24 bg-ol-gray">
-                <div class="lg:pb-16">
+            <div class="relative lg:max-h-screen lg:min-h-screen lg:min-w-3xl xl:min-w-3xl lg:flex lg:items-center lg:justify-center lg:w-2/5 lg:py-20 bg-ol-gray">
+                <div class="">
                     <div class="px-6 pt-16 pb-12 text-center lg:text-left md:max-w-3xl md:mx-auto lg:max-w-full lg:pt-0">
                         <div class="flex justify-center lg:block">
                             @include('partials.logo-white', ['classes' => 'w-48 h-48'])
@@ -58,14 +58,14 @@
             <div class="hidden -m-1 overflow-hidden bg-no-repeat lg:-mr-48 lg:w-64 xl:w-96 lg:block" style="background-image:url(/img/wave.svg);">
             </div>
             <div class="flex flex-col justify-center flex-1 p-8 lg:p-0 lg:min-h-screen lg:pr-8">
-                <div class="mb-4 text-2xl font-bold text-white">Upcoming Meetings</div>
-                @foreach ($meetings as $meeting)
-                    @include('partials.meeting-card', ['meeting' => $meeting])
-                @endforeach
+                <div class="mb-4 text-2xl font-bold text-white">Our Next Meeting</div>
+                <div class="w-full">
+                    @include('partials.meeting-card', ['meeting' => $meetings[0]])
+                    {{-- <div class="mt-4 mr-8 font-bold text-right text-white">
+                        See All Meetings
+                    </div> --}}
+                </div>
             </div>
-        </div>
-        <div class="flex">
-            <div class="h-96"></div>
         </div>
     </body>
 </html>
