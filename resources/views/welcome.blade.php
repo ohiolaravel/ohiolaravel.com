@@ -58,7 +58,7 @@
             <div class="flex flex-col items-center justify-center p-8 bg-left-top bg-no-repeat bg-contain lg:p-0 lg:min-h-screen lg:pr-8 lg:w-2/5 xl:w-1/2">
                 <div class="w-full 2xl:w-1/2">
                     <div class="mb-4 text-2xl font-bold text-white">Our Next Meeting</div>
-                    @include('partials.meeting-card', ['meeting' => $meetings[0]])
+                    @include('partials.meeting-card', ['meeting' => $nextMeeting])
                 </div>
             </div>
         </div>
