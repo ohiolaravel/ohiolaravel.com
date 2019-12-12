@@ -13,4 +13,6 @@
 
 Route::get('/', 'WelcomeController@show')->name('welcome');
 
+Route::get('meeting/{id}', 'MeetingController@show')->name('meeting');
+
 Route::post('newsletter/signup', 'NewsletterController@store');
