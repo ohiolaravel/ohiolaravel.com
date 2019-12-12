@@ -14,3 +14,10 @@
 Route::get('/', 'WelcomeController@show')->name('welcome');
 
 Route::post('newsletter/signup', 'NewsletterController@store');
+
+Route::get('home', 'HomeController@index');
+
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('logout', 'Auth\LoginController@showLoginForm')->name('logout');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('login', 'Auth\LoginController@login');
