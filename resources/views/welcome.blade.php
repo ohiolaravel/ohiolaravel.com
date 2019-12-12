@@ -58,15 +58,11 @@
             <div class="flex flex-col items-center justify-center p-8 bg-left-top bg-no-repeat bg-contain lg:p-0 lg:min-h-screen lg:pr-8 lg:w-2/5 xl:w-1/2">
                 <div class="w-full 2xl:w-1/2">
                     <div class="mb-4 text-2xl font-bold text-white">Our Next Meeting</div>
-                    @include('partials.meeting-card', ['meeting' => $nextMeeting])
+                    @if( $nextMeeting )
+                        @include('partials.meeting-card', ['meeting' => $nextMeeting])
+                    @endif
                 </div>
             </div>
         </div>
-        <div class="block sm:hidden">Default</div>
-        <div class="hidden sm:block md:hidden">Small</div>
-        <div class="hidden md:block lg:hidden">Medium</div>
-        <div class="hidden lg:block xl:hidden">Large</div>
-        <div class="hidden xl:block 2xl:hidden">XL</div>
-        <div class="hidden 2xl:block">2XL</div>
     </body>
 </html>
