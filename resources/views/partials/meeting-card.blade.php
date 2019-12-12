@@ -20,7 +20,7 @@
                 </div>
                 <div class="w-1/2">
                     <div class="italic text-right">
-                        Food & Drink provided.
+                        {{$meeting->note}}
                     </div>
                 </div>
             </div>
