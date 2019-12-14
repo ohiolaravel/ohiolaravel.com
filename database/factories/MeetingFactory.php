@@ -10,6 +10,7 @@ use Illuminate\Support\Carbon;
 $factory->define(Meeting::class, function (Faker $faker) {
     $start = $faker->dateTimeBetween(now(), now()->addYear());
     return [
+        'slug' => (Carbon::parse($start))->toDateString(),
         'title' => $faker->word . ' Presentation',
         'description' => $faker->paragraph(),
         'image_url' => $faker->imageUrl(),

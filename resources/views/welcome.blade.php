@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-        <title>Ohio Laravel</title>
-    </head>
-    <body class="font-sans antialiased bg-cover bg-welcome">
+@extends('layouts.main')
         <div class="flex flex-col min-h-screen overflow-hidden lg:flex-row">
             <div class="bg-right-top bg-no-repeat bg-cover lg:max-h-screen lg:min-h-screen lg:flex lg:items-center lg:justify-center bg-ol-gray lg:bg-transparent bg-wave lg:w-3/5 lg:pr-16 xl:w-1/2">
                 <div class="">
@@ -64,5 +56,3 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
