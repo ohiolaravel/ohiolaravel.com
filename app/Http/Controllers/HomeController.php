@@ -24,7 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $meetings = Meeting::latest()
+        $meetings = Meeting::query()
+            ->where('start_at', '>=', now())
+            ->orderBy('start_at')
             ->paginate(10);
 
         return view('home')

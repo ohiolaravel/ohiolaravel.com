@@ -1,27 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container max-w-5xl mx-auto bg-red">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    {{ $meetings->links() }}
-                    @foreach ($meetings as $meeting)
-                        @include('partials.meeting-card', ['meeting' => $meeting])
-                        <br><br>
-                    @endforeach
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+            @foreach ($meetings as $meeting)
+                @include('partials.meeting-card', ['meeting' => $meeting, 'image' => false])
+                <br><br>
+            @endforeach
+            {{ $meetings->links() }}
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
                 </div>
-            </div>
+            @endif
         </div>
     </div>
 </div>
