@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container max-w-5xl mx-auto bg-red">
     <div class="row justify-content-center">
         <div class="col-md-8">
             @foreach ($meetings as $meeting)
@@ -16,5 +15,4 @@
             @endif
         </div>
     </div>
-</div>
 @endsection

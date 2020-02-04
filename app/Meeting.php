@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Meeting extends Model
 {
@@ -22,5 +23,14 @@ class Meeting extends Model
     public function getDisplayDateAttribute()
     {
         return $this->start_at->format('M jS - ga');
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($activity) {
+            $activity->slug = Carbon::parse($activity->start_at)->toDateString();
+        });
     }
 }

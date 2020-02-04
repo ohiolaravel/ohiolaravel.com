@@ -33,6 +33,8 @@
                 </div>
                 <div class="flex-grow block w-full lg:flex lg:items-center lg:w-auto">
                     <div class="text-sm lg:flex-grow">
+                        <a href="/home" class="mr-4">Home</a>
+                        <a href="/meetings/create" class="mr-4">Create Meeting</a>
                     </div>
                     <div>
                         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -49,7 +51,16 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="container max-w-5xl mx-auto mt-8 bg-red">
+            @if ($errors->any())
+                <div class="p-4 text-red-800 bg-red-200 rounded-lg">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             @yield('content')
         </main>
     </div>
