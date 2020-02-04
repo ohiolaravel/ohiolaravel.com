@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('head')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+@endpush
+
 @section('content')
     <h1 class="text-2xl">Create Meeting</h1>
 
@@ -12,7 +16,7 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <input class="w-full px-4 py-2 leading-tight bg-gray-400 border-2 border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-ol-gray" id="title" name="title" type="text" placeholder="Open House">
+                <input class="w-full px-4 py-2 leading-tight bg-gray-300 border-2 border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-ol-gray" id="title" name="title" type="text" placeholder="Open House">
             </div>
         </div>
         <div class="mb-6 md:flex">
@@ -22,7 +26,7 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <textarea class="w-full px-4 py-2 leading-tight bg-gray-400 border-2 border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-ol-gray" name="description" id="description" name="description" rows="5"></textarea>
+                <textarea class="w-full px-4 py-2 leading-tight bg-gray-300 border-2 border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-ol-gray" name="description" id="description" name="description" rows="5"></textarea>
             </div>
         </div>
         <div class="mb-6 md:flex">
@@ -33,7 +37,7 @@
             </div>
             <div class="md:w-2/3">
                 <div class="relative inline-block w-64">
-                    <select class="block w-full px-4 py-2 pr-8 leading-tight bg-gray-400 border border-transparent rounded appearance-none hover:border-ol-gray focus:outline-none focus:border-ol-gray focus:shadow-outline" id="location_id" name="location_id">
+                    <select class="block w-full px-4 py-2 pr-8 leading-tight bg-gray-300 border border-transparent rounded appearance-none hover:border-ol-gray focus:outline-none focus:border-ol-gray focus:shadow-outline" id="location_id" name="location_id">
                         <option value="">&mdash;</option>
                         @foreach($locations as $location)
                             <option value="{{$location->id}}">{{$location->name}}</option>
@@ -52,7 +56,7 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <input class="w-full px-4 py-2 leading-tight bg-gray-400 border-2 border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-ol-gray" id="note" name="note" type="text" placeholder="Food Provided?">
+                <input class="w-full px-4 py-2 leading-tight bg-gray-300 border-2 border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-ol-gray" id="note" name="note" type="text" placeholder="Food Provided?">
             </div>
         </div>
         <div class="mb-6 md:flex md:items-center">
@@ -62,7 +66,7 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <input class="w-full px-4 py-2 leading-tight bg-gray-400 border-2 border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-ol-gray" id="start_at" name="start_at" type="text">
+                <input class="w-full px-4 py-2 leading-tight bg-gray-300 border-2 border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-ol-gray" id="start_at" name="start_at" type="text">
             </div>
         </div>
         <div class="mb-6 md:flex md:items-center">
@@ -72,7 +76,7 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <input class="w-full px-4 py-2 leading-tight bg-gray-400 border-2 border-gray-400 rounded appearance-none focus:outline-none focus:bg-white focus:border-ol-gray" id="end_at" name="end_at" type="text">
+                <input class="w-full px-4 py-2 leading-tight bg-gray-300 border-2 border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-ol-gray" id="end_at" name="end_at" type="text">
             </div>
         </div>
         <div class="mb-6 md:flex md:items-center">
@@ -85,4 +89,3 @@
     </form>
 
 @endsection
-

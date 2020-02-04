@@ -18,8 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @stack('head')
 </head>
-<body>
+<body class="bg-gray-200">
     <div id="app">
         <nav class="text-white bg-ol-gray">
             <div class="flex flex-wrap items-center justify-between max-w-5xl p-2 mx-auto">
@@ -64,5 +65,6 @@
             @yield('content')
         </main>
     </div>
+    @stack('last')
 </body>
 </html>
