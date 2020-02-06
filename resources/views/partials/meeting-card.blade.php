@@ -1,5 +1,7 @@
 <div class="flex flex-col w-full bg-white rounded shadow-lg">
-    <div class="w-full h-64 bg-center bg-cover rounded-t" style="background-image: url({{$meeting->image_url}})"></div>
+    @if(!isset($image) || $image !== false)
+        <div class="w-full h-64 bg-center bg-cover rounded-t" style="background-image: url({{$meeting->image_url}})"></div>
+    @endif
     <div class="flex flex-col w-full md:flex-row">
         <div class="p-2 font-bold leading-none text-center text-gray-800 uppercase bg-gray-400 md:hidden">
             {{ $meeting->start_at->format('D M j, Y g') }}-{{ str_replace('m', '', $meeting->end_at->format('ga')) }}

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Meeting extends Model
 {
@@ -12,7 +13,10 @@ class Meeting extends Model
 
     protected $with = ['location'];
 
-    protected $appends = ['display_date'];
+    protected $appends = [
+        'display_date',
+        'image_url',
+    ];
 
     public function location()
     {
@@ -22,5 +26,19 @@ class Meeting extends Model
     public function getDisplayDateAttribute()
     {
         return $this->start_at->format('M jS - ga');
+    }
+
+    public function getImageUrlAttribute()
+    {
+        return $this->image_path ? asset(basename($this->image_path)) : '';
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($activity) {
+            $activity->slug = Carbon::parse($activity->start_at)->toDateString();
+        });
     }
 }

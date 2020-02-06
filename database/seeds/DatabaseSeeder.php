@@ -12,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(Meeting::class)->create();
+        factory(Meeting::class, 20)->create();
     }
 }
