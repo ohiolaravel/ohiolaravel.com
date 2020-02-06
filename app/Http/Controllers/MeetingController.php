@@ -28,12 +28,12 @@ class MeetingController extends Controller
 
     public function store(MeetingStoreFormRequest $request)
     {
-        // validation
+        $path = request()->file('image')->store('public');
 
-        $meeting = Meeting::create([
+        Meeting::create([
             'title' => request()->title,
             'description' => request()->description,
-            'image_url' => request()->image_url,
+            'image_path' => $path,
             'start_at' => Carbon::parse(request()->start_at),
             'end_at' => Carbon::parse(request()->end_at),
             'location_id' => request()->location_id,

@@ -17,7 +17,7 @@ class CreateMeetingsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('image_url')->nullable();
+            $table->string('image_path')->nullable();
             $table->datetime('start_at');
             $table->datetime('end_at');
             $table->unsignedInteger('location_id');

@@ -18,7 +18,7 @@ Route::post('newsletter/signup', 'NewsletterController@store');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::get('logout', 'Auth\LoginController@showLoginForm')->name('logout');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-Route::post('log    in', 'Auth\LoginController@login');
+Route::post('login', 'Auth\LoginController@login');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('home', 'HomeController@index');

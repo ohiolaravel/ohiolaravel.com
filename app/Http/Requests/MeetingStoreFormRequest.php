@@ -26,7 +26,7 @@ class MeetingStoreFormRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => '',
-            'image_url' => '',
+            'image' => '',
             'start_at' => 'required',
             'end_at' => 'required',
             'location_id' => 'required',
