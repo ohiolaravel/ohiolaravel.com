@@ -13,6 +13,17 @@
 
 Route::get('/', 'WelcomeController@show')->name('welcome');
 
-Route::get('meetings/{id}', 'MeetingController@show')->name('meetings.show');
-
 Route::post('newsletter/signup', 'NewsletterController@store');
+
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('logout', 'Auth\LoginController@showLoginForm')->name('logout');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('login', 'Auth\LoginController@login');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('home', 'HomeController@index');
+    Route::get('meetings/create', 'MeetingController@create');
+    Route::post('meetings', 'MeetingController@store');
+});
+
+Route::get('meetings/{id}', 'MeetingController@show')->name('meetings.show');
