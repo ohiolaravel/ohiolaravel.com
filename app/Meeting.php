@@ -30,7 +30,7 @@ class Meeting extends Model
 
     public function getImageUrlAttribute()
     {
-        return $this->image_path ? asset(basename($this->image_path)) : '';
+        return $this->image_path ? asset('storage/'.basename($this->image_path)) : '';
     }
 
     public static function boot()
