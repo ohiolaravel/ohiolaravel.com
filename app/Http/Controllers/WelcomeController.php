@@ -9,7 +9,7 @@ class WelcomeController extends Controller
     public function show()
     {
         $nextMeeting = Meeting::where('end_at', '>=', now())
-            ->latest()
+            ->orderBy('start_at', 'asc')
             ->first();
 
         return view('welcome')

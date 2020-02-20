@@ -14,7 +14,11 @@
             <div class="md:text-xl">{{ $meeting->start_at->format('g') }}-{{ str_replace('m', '', $meeting->end_at->format('ga')) }}</div>
         </div>
         <div class="p-4 font-normal text-gray-800 md:w-3/4">
-            <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">{{$meeting->title}}</h1>
+            <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">
+                <a class="hover:text-gray-600" href="{{ route('meetings.show', ['id' => $meeting->id]) }}">
+                    {{$meeting->title}}
+                </a>
+            </h1>
             <p>{!! $meeting->description !!}</p>
             <div class="flex flex-row mt-4 text-gray-700">
                 <div class="w-1/2">
